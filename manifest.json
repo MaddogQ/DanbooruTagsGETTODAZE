@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Danbooru Tags Extractor",
+    "version": "1.0",
+    "description": "Extract tags from Danbooru images and export them to clipboard or file",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "clipboardWrite",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://danbooru.donmai.us/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}

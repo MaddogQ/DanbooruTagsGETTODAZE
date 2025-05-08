@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danbooru Tags Extractor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Danbooru Tags Extractor</h2>
+      <div id="status" class="status"></div>
+
+      <div class="input-group">
+        <input type="text" id="imageId" placeholder="Enter Danbooru Image ID" />
+        <button id="extractBtn">Extract Tags</button>
+      </div>
+
+      <div id="results" class="results hidden">
+        <div class="result-group">
+          <label>Artist:</label>
+          <div id="artist" class="tag-list"></div>
+        </div>
+
+        <div class="result-group">
+          <label>Character:</label>
+          <div id="character" class="tag-list"></div>
+        </div>
+
+        <div class="result-group">
+          <label>Origin:</label>
+          <div id="origin" class="tag-list"></div>
+        </div>
+
+        <div class="result-group">
+          <label>Tags:</label>
+          <div id="tags" class="tag-list"></div>
+        </div>
+
+        <div class="export-options">
+          <div class="checkbox-group">
+            <input type="checkbox" id="includeArtist" checked />
+            <label for="includeArtist">Include artist in export</label>
+          </div>
+
+          <div class="format-options">
+            <label>Output Format:</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="formatOriginal"
+                  name="format"
+                  value="original"
+                />
+                <label for="formatOriginal">Original (with underscores)</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="formatSpaces"
+                  name="format"
+                  value="spaces"
+                  checked
+                />
+                <label for="formatSpaces">Spaces (with escaped brackets)</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button id="copyBtn">Copy to Clipboard</button>
+            <button id="saveBtn">Save to File</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
